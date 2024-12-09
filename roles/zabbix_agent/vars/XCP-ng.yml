@@ -1,0 +1,10 @@
+---
+# vars file for zabbix_agent (RedHat)
+
+zabbix_agent: zabbix-agent
+
+zabbix_valid_agent_versions:
+  "8":
+    - 7.0
+    - 6.4
+    - 6.0
