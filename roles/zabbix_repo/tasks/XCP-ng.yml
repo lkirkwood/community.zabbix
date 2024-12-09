@@ -1,7 +1,7 @@
 ---
 # Tasks specific for XCP-ng systems
 
-- name: "RedHat | Make sure old file is absent"
+- name: "XCP-ng | Make sure old file is absent"
   ansible.builtin.file:
     path: /etc/yum.repos.d/zabbix-supported.repo
     state: absent
@@ -9,7 +9,7 @@
   tags:
     - install
 
-- name: "RedHat | Install GPG key"
+- name: "XCP-ng | Install GPG key"
   ansible.builtin.rpm_key:
     state: present
     key: "{{ zabbix_repo_rpm_gpg_key_url }}"
@@ -17,7 +17,7 @@
   tags:
     - install
 
-- name: "RedHat | Install basic repo file"
+- name: "XCP-ng | Install basic repo file"
   ansible.builtin.yum_repository:
     name: "{{ item.name }}"
     description: "{{ item.description }}"
